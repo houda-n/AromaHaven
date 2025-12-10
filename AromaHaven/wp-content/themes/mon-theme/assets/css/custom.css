@@ -1,0 +1,195 @@
+/* ----------------------------------
+   GLOBAL BASE STYLES
+---------------------------------- */
+body {
+    font-family: "Segoe UI", Roboto, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: #FAF9F6;
+    color: #333;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: auto;
+}
+
+a {
+    color: #4A6E58;
+    text-decoration: none;
+}
+a:hover {
+    opacity: .8;
+}
+
+/* ----------------------------------
+   HEADER
+---------------------------------- */
+.site-header {
+    background: white;
+    border-bottom: 1px solid #E4E4E4;
+    padding: 15px 0;
+}
+
+.logo a {
+    font-size: 28px;
+    font-weight: bold;
+    color: #4A6E58;
+}
+
+.main-nav ul {
+    list-style: none;
+    display: flex;
+    gap: 25px;
+    margin: 0;
+    padding: 0;
+}
+.main-nav li a {
+    font-weight: 500;
+    font-size: 16px;
+}
+
+/* HEADER LAYOUT */
+.site-header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* ----------------------------------
+   FOOTER
+---------------------------------- */
+.site-footer {
+    background: #4A6E58;
+    color: white;
+    text-align: center;
+    padding: 30px 0;
+    margin-top: 40px;
+}
+.site-footer a {
+    color: white;
+}
+
+/* ----------------------------------
+   HOME PAGE (front-page.php)
+---------------------------------- */
+
+/* HERO */
+.hero {
+    text-align: center;
+    padding: 60px 0 40px;
+}
+.hero h1 {
+    color: #4A6E58;
+    font-size: 42px;
+    margin-bottom: 10px;
+}
+.hero p {
+    font-size: 18px;
+    color: #666;
+}
+
+/* PRODUCT SECTION */
+.featured h2, .categories h2 {
+    text-align: center;
+    color: #4A6E58;
+    margin-top: 40px;
+    margin-bottom: 20px;
+}
+
+/* CATEGORY BUTTONS */
+.cats {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+.cats a {
+    background: #E7F0EB;
+    padding: 12px 22px;
+    border-radius: 10px;
+    font-weight: 600;
+    color: #4A6E58;
+    transition: 0.2s;
+}
+.cats a:hover {
+    background: #DDE7E1;
+}
+
+/* ----------------------------------
+   WOO — SHOP GRID
+---------------------------------- */
+
+ul.products {
+    display: grid !important;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 25px !important;
+}
+
+ul.products li.product {
+    background: white;
+    border-radius: 12px;
+    padding: 12px;
+    border: 1px solid #EEE;
+    transition: .2s;
+}
+
+ul.products li.product:hover {
+    box-shadow: 0 4px 14px rgba(0,0,0,0.08);
+}
+
+/* ----------------------------------
+   WOO — SINGLE PRODUCT
+---------------------------------- */
+
+.product-container {
+    display: flex;
+    gap: 40px;
+    margin-top: 20px;
+}
+
+.product-gallery img {
+    border-radius: 10px;
+}
+
+.product-info h1 {
+    color: #4A6E58;
+}
+.product-info .price {
+    font-size: 22px;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+.benefits {
+    background: #E7F0EB;
+    padding: 12px;
+    border-radius: 8px;
+    color: #4A6E58;
+    font-style: italic;
+    margin-top: 20px;
+}
+
+/* ----------------------------------
+   RESPONSIVE DESIGN
+---------------------------------- */
+
+@media (max-width: 900px) {
+    .product-container {
+        flex-direction: column;
+    }
+    .main-nav ul {
+        gap: 12px;
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 600px) {
+    .hero h1 { font-size: 32px; }
+    .hero p { font-size: 16px; }
+
+    .cats {
+        flex-direction: column;
+    }
+}
