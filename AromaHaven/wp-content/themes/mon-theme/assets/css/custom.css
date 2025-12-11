@@ -323,18 +323,39 @@ ul.products li.product:hover {
 }
 
 /* ----------------------------------
-   WOO — SHOP GRID
+   WOO — SHOP GRID & CARDS
 ---------------------------------- */
 
-.woocommerce ul.products {
+/* Grille produits (shop + widgets produits) */
+.woocommerce ul.products,
+ul.products {
+  list-style: none;
+  margin: 30px 0 0;
+  padding: 0;
   display: grid !important;
-  grid-template-columns: repeat(4, minmax(0, 1fr)); /* 4 colonnes desktop */
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 30px !important;
-  margin-top: 30px;
+}
+
+/* Tablette : 2 colonnes */
+@media (max-width: 1024px) {
+  .woocommerce ul.products,
+  ul.products {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+/* Mobile : 1 colonne */
+@media (max-width: 600px) {
+  .woocommerce ul.products,
+  ul.products {
+    grid-template-columns: 1fr;
+  }
 }
 
 /* Carte produit */
-.woocommerce ul.products li.product {
+.woocommerce ul.products li.product,
+ul.products li.product {
   background: #ffffff;
   border-radius: 16px;
   padding: 14px;
@@ -345,30 +366,34 @@ ul.products li.product:hover {
   height: 100%;
 }
 
-.woocommerce ul.products li.product:hover {
+.woocommerce ul.products li.product:hover,
+ul.products li.product:hover {
   box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
   transform: translateY(-3px);
 }
 
-/* Lien principal = on aligne tout verticalement */
-.woocommerce ul.products li.product a.woocommerce-LoopProduct-link {
+/* Lien principal = contenu vertical */
+.woocommerce ul.products li.product a.woocommerce-LoopProduct-link,
+ul.products li.product a.woocommerce-LoopProduct-link {
   display: flex;
   flex-direction: column;
   gap: 0.75rem;
   flex: 1;
 }
 
-/* Image produit plus grande + responsive */
-.woocommerce ul.products li.product a img {
+/* Image produit harmonisée */
+.woocommerce ul.products li.product a img,
+ul.products li.product a img {
   width: 100%;
-  aspect-ratio: 4 / 5; /* forme “carte produit” verticale */
-  object-fit: cover; /* recadre sans déformer */
+  aspect-ratio: 4 / 5; /* carte verticale */
+  object-fit: cover; /* recadrage propre */
   border-radius: 12px;
   margin-bottom: 8px;
 }
 
-/* Titre produit */
-.woocommerce ul.products li.product .woocommerce-loop-product__title {
+/* Titre */
+.woocommerce ul.products li.product .woocommerce-loop-product__title,
+ul.products li.product .woocommerce-loop-product__title {
   font-size: 16px;
   font-weight: 600;
   color: #2f3b34;
@@ -376,14 +401,17 @@ ul.products li.product:hover {
 }
 
 /* Prix */
-.woocommerce ul.products li.product .price {
+.woocommerce ul.products li.product .price,
+ul.products li.product .price {
   font-size: 15px;
   font-weight: 700;
   color: #4a6e58;
+  margin-bottom: 10px;
 }
 
 /* Bouton “Add to cart” */
-.woocommerce ul.products li.product .button {
+.woocommerce ul.products li.product .button,
+ul.products li.product .button {
   margin-top: auto;
   width: 100%;
   text-align: center;
@@ -396,7 +424,8 @@ ul.products li.product:hover {
   transition: background 0.2s ease, transform 0.1s ease;
 }
 
-.woocommerce ul.products li.product .button:hover {
+.woocommerce ul.products li.product .button:hover,
+ul.products li.product .button:hover {
   background: #395545;
   transform: translateY(-1px);
 }
