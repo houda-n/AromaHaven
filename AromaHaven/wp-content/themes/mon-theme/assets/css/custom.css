@@ -66,7 +66,6 @@ a:hover {
   text-align: center;
   padding: 30px 0;
   margin-top: 40px;
-  display: flex;
 }
 .site-footer a {
   color: white;
@@ -120,213 +119,10 @@ a:hover {
 }
 
 /* ----------------------------------
-   WOO — SHOP GRID
----------------------------------- */
-
-ul.products {
-  display: grid !important;
-  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-  gap: 25px !important;
-}
-
-ul.products li.product {
-  background: white;
-  border-radius: 12px;
-  padding: 12px;
-  border: 1px solid #eee;
-  transition: 0.2s;
-}
-
-ul.products li.product:hover {
-  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
-}
-
-/* ----------------------------------
-   WOO — SINGLE PRODUCT
----------------------------------- */
-
-.product-container {
-  display: flex;
-  gap: 40px;
-  margin-top: 20px;
-}
-
-.product-gallery img {
-  border-radius: 10px;
-}
-
-.product-info h1 {
-  color: #4a6e58;
-}
-.product-info .price {
-  font-size: 22px;
-  font-weight: bold;
-  margin-bottom: 15px;
-}
-
-.benefits {
-  background: #e7f0eb;
-  padding: 12px;
-  border-radius: 8px;
-  color: #4a6e58;
-  font-style: italic;
-  margin-top: 20px;
-}
-
-/* ----------------------------------
-   WOO — SHOP GRID
----------------------------------- */
-
-.woocommerce ul.products {
-  display: grid !important;
-  grid-template-columns: repeat(4, minmax(0, 1fr)); /* 4 colonnes desktop */
-  gap: 30px !important;
-  margin-top: 30px;
-}
-
-/* Carte produit */
-.woocommerce ul.products li.product {
-  background: #ffffff;
-  border-radius: 16px;
-  padding: 14px;
-  border: 1px solid #eee;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-  display: flex;
-  flex-direction: column;
-  height: 100%;
-}
-
-.woocommerce ul.products li.product:hover {
-  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
-  transform: translateY(-3px);
-}
-
-/* Lien principal = on aligne tout verticalement */
-.woocommerce ul.products li.product a.woocommerce-LoopProduct-link {
-  display: flex;
-  flex-direction: column;
-  gap: 0.75rem;
-  flex: 1;
-}
-
-/* Image produit plus grande + responsive */
-.woocommerce ul.products li.product a img {
-  width: 100%;
-  aspect-ratio: 4 / 5; /* forme “carte produit” verticale */
-  object-fit: cover; /* recadre sans déformer */
-  border-radius: 12px;
-  margin-bottom: 8px;
-}
-
-/* Titre produit */
-.woocommerce ul.products li.product .woocommerce-loop-product__title {
-  font-size: 16px;
-  font-weight: 600;
-  color: #2f3b34;
-  margin: 4px 0 2px;
-}
-
-/* Prix */
-.woocommerce ul.products li.product .price {
-  font-size: 15px;
-  font-weight: 700;
-  color: #4a6e58;
-}
-
-/* Bouton “Add to cart” */
-.woocommerce ul.products li.product .button {
-  margin-top: auto;
-  width: 100%;
-  text-align: center;
-  background: #4a6e58;
-  color: #fff;
-  border-radius: 999px;
-  padding: 10px 0;
-  font-weight: 600;
-  border: none;
-  transition: background 0.2s ease, transform 0.1s ease;
-}
-
-.woocommerce ul.products li.product .button:hover {
-  background: #395545;
-  transform: translateY(-1px);
-}
-
-/* ----------------------------------
-   WOO — SINGLE PRODUCT
----------------------------------- */
-
-.product-container {
-  display: flex;
-  gap: 40px;
-  margin-top: 20px;
-  align-items: flex-start;
-}
-
-.product-gallery img {
-  width: 100%;
-  max-width: 520px;
-  border-radius: 14px;
-  object-fit: cover;
-}
-
-.product-info h1 {
-  color: #4a6e58;
-  margin-top: 0;
-}
-.product-info .price {
-  font-size: 24px;
-  font-weight: bold;
-  margin-bottom: 15px;
-}
-
-.benefits {
-  background: #e7f0eb;
-  padding: 12px;
-  border-radius: 8px;
-  color: #4a6e58;
-  font-style: italic;
-  margin-top: 20px;
-}
-
-/* ----------------------------------
-   RESPONSIVE DESIGN
----------------------------------- */
-
-/* Tablette : 2 ou 3 colonnes selon la largeur */
-@media (max-width: 1024px) {
-  .woocommerce ul.products {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-  }
-
-  .product-container {
-    gap: 24px;
-  }
-}
-
-/* Mobile large : 2 colonnes */
-@media (max-width: 768px) {
-  .woocommerce ul.products {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-
-  .product-container {
-    flex-direction: column;
-  }
-}
-
-/* Petit mobile : 1 colonne */
-@media (max-width: 520px) {
-  .woocommerce ul.products {
-    grid-template-columns: 1fr;
-  }
-}
-
-/* ----------------------------------
    WOO — SHOP GRID & CARDS
 ---------------------------------- */
 
-/* Grille produits (shop + widgets produits) */
+/* Grille produits (shop + shortcodes) */
 .woocommerce ul.products,
 ul.products {
   list-style: none;
@@ -386,12 +182,12 @@ ul.products li.product a.woocommerce-LoopProduct-link {
 ul.products li.product a img {
   width: 100%;
   aspect-ratio: 4 / 5; /* carte verticale */
-  object-fit: cover; /* recadrage propre */
+  object-fit: cover;
   border-radius: 12px;
   margin-bottom: 8px;
 }
 
-/* Titre */
+/* Titre produit */
 .woocommerce ul.products li.product .woocommerce-loop-product__title,
 ul.products li.product .woocommerce-loop-product__title {
   font-size: 16px;
@@ -467,36 +263,11 @@ ul.products li.product .button:hover {
   margin-top: 20px;
 }
 
-/* ----------------------------------
-   RESPONSIVE DESIGN
----------------------------------- */
-
-/* Tablette : 2 ou 3 colonnes selon la largeur */
-@media (max-width: 1024px) {
-  .woocommerce ul.products {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-  }
-
-  .product-container {
-    gap: 24px;
-  }
-}
-
-/* Mobile large : 2 colonnes */
+/* Responsive fiche produit */
 @media (max-width: 768px) {
-  .woocommerce ul.products {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-
   .product-container {
     flex-direction: column;
-  }
-}
-
-/* Petit mobile : 1 colonne */
-@media (max-width: 520px) {
-  .woocommerce ul.products {
-    grid-template-columns: 1fr;
+    gap: 24px;
   }
 }
 
@@ -544,6 +315,10 @@ ul.products li.product .button:hover {
   margin: 0 0 10px;
   color: #4a6e58;
 }
+
+/* ----------------------------------
+   HEADER CART
+---------------------------------- */
 
 .header-inner {
   display: flex;

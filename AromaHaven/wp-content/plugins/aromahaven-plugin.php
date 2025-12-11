@@ -79,9 +79,7 @@ function ah_display_random_rituel_on_product() {
 add_action('woocommerce_after_single_product_summary', 'ah_display_random_rituel_on_product', 12);
 
 
-/**
- * 3. SHORTCODE — [rituels_bien_etre]
- */
+
 function ah_shortcode_rituels( $atts ) {
     $atts = shortcode_atts([
         'limit' => 3
