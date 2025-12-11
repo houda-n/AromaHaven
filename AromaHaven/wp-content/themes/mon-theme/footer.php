@@ -1,18 +1,24 @@
-</main>
+    </main>
 
-<footer class="site-footer">
-    <div class="container">
-        <p>© <?php echo date('Y'); ?> AromaHaven – Bien-être & huiles essentielles.</p>
+    <footer class="site-footer">
+        <div class="container site-footer__inner">
+            <p class="site-footer__copy">
+                © <?php echo date_i18n('Y'); ?> AromaHaven – Bien-être &amp; huiles essentielles.
+            </p>
 
-        <?php 
-            wp_nav_menu([
-                'theme_location' => 'footer_menu',
-                'container' => false
-            ]);
-        ?>
-    </div>
-</footer>
+            <nav class="footer-menu" aria-label="<?php esc_attr_e( 'Menu de pied de page', 'aromahaven' ); ?>">
+                <?php 
+                    wp_nav_menu([
+                        'theme_location' => 'footer_menu',
+                        'container'      => false,
+                        'menu_class'     => 'footer-menu__list',
+                        'fallback_cb'    => false,
+                    ]);
+                ?>
+            </nav>
+        </div>
+    </footer>
 
-<?php wp_footer(); ?>
+    <?php wp_footer(); ?>
 </body>
 </html>

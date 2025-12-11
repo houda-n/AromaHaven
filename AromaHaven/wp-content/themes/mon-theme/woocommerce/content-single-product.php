@@ -12,7 +12,10 @@ global $product;
 
     <div class="product-info">
         <h1><?php the_title(); ?></h1>
-        <div class="price"><?php echo $product->get_price_html(); ?></div>
+
+        <div class="price">
+            <?php echo wp_kses_post( $product->get_price_html() ); ?>
+        </div>
 
         <?php woocommerce_template_single_add_to_cart(); ?>
 

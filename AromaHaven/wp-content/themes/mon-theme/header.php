@@ -8,19 +8,29 @@
 <body <?php body_class(); ?>>
 
 <header class="site-header">
-    <div class="container">
+    <div class="container header-inner">
         <h1 class="logo">
-            <a href="<?php echo home_url(); ?>">AromaHaven</a>
+            <a href="<?php echo esc_url( home_url( '/' ) ); ?>">AromaHaven</a>
         </h1>
 
-        <nav class="main-nav">
-            <?php 
-                wp_nav_menu([
-                    'theme_location' => 'main_menu',
-                    'container' => false
-                ]); 
-            ?>
-        </nav>
+        <div class="header-right">
+            <nav class="main-nav">
+                <?php 
+                    wp_nav_menu([
+                        'theme_location' => 'main_menu',
+                        'container'      => false
+                    ]); 
+                ?>
+            </nav>
+
+            <div class="header-cart-wrapper">
+                <?php 
+                if ( function_exists( 'aromahaven_header_cart' ) ) {
+                    aromahaven_header_cart();
+                }
+                ?>
+            </div>
+        </div>
     </div>
 </header>
 
